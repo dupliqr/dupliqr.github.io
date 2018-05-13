@@ -1,0 +1,36 @@
+:root {
+    --borderColor: #999999;
+}
+
+html, body {
+    margin: 10px;
+    padding: 10px;
+    font-size: 12pt;
+    font-family: monospace;
+    font-family: Monaco;
+    font-family: Courier;
+    font-family: "Courier New";
+    font-family: Monaco;
+    font-family: menlo;
+    font-family: "Lucida Console";
+    color: #000000;
+    //border: var(--bordersize1) var(--borderColor);
+    //overflow: hidden;
+    background-color: #eee;
+}
+
+#imgin, #cleanup {
+    image-rendering: optimizeSpeed;             /* Older versions of FF          */
+    image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+    image-rendering: -webkit-optimize-contrast; /* Safari                        */
+    image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+    image-rendering: pixelated;                 /* Awesome future-browsers       */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+}
+
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}
+

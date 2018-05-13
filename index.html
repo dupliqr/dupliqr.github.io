@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>BETA Dupli-QR</title>
+<meta charset="UTF-8"/>
+<meta name="description" content="QR-Code Scribe(decode, generate, and copy)"/>
+<meta name="keywords" content="QR,Code,qrcode,QR-Code,Copier,Scribe,qrscribe,duplicate,duplicator,UTF-8,utf8,Unicode,JavaScript,Browser,Ready"/>
+<meta name="authors" content="KippleBits,LazarSoft,kazuhikoarase"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<script type="text/javascript" src="./lazarsoft/grid.js"></script>
+<script type="text/javascript" src="./lazarsoft/version.js"></script>
+<script type="text/javascript" src="./lazarsoft/detector.js"></script>
+<script type="text/javascript" src="./lazarsoft/formatinf.js"></script>
+<script type="text/javascript" src="./lazarsoft/errorlevel.js"></script>
+<script type="text/javascript" src="./lazarsoft/bitmat.js"></script>
+<script type="text/javascript" src="./lazarsoft/datablock.js"></script>
+<script type="text/javascript" src="./lazarsoft/bmparser.js"></script>
+<script type="text/javascript" src="./lazarsoft/datamask.js"></script>
+<script type="text/javascript" src="./lazarsoft/rsdecoder.js"></script>
+<script type="text/javascript" src="./lazarsoft/gf256poly.js"></script>
+<script type="text/javascript" src="./lazarsoft/gf256.js"></script>
+<script type="text/javascript" src="./lazarsoft/decoder.js"></script>
+<script type="text/javascript" src="./lazarsoft/qrcode.js"></script>
+<script type="text/javascript" src="./lazarsoft/findpat.js"></script>
+<script type="text/javascript" src="./lazarsoft/alignpat.js"></script>
+<script type="text/javascript" src="./lazarsoft/databr.js"></script>
+
+<script type="text/javascript" src="./kazuhikoarase/gqrcode.js"></script>
+<!-- SJIS Support (optional) -->
+<script type="text/javascript" src="./kazuhikoarase/gqrcode_SJIS.js"></script>
+<!--
+ <script type="text/javascript" src="./kazuhikoarase/gqrcode_SJIS.js"></script>
+ -->
+<!-- Uncomment to encode string in qrcode as UTF8 (optional) -->
+<!--
+ <script type="text/javascript" src="./kazuhikoarase/gqrcode_UTF8.js"></script>
+ -->
+
+<script type="text/javascript" src="./main.js"></script>
+
+<link rel="stylesheet" href="./style/style.css" type="text/css" />
+</head>
+
+<!--<body onload="load()">-->
+<body>
+    <h1>BETA QR-Code Duplicator(pure javascript, browser ready)</h1>
+    <!--<input type="file" onchange="previewFile()"><br>-->
+    <input type="file" onchange="previewFile()" id="pickfile" name="infile"><br>
+        <img id="imgin" src="" height="200" alt="Image preview...">
+    <p>
+    <pre id="readout"></pre>
+    </p>
+    <!--<img id="cleanup" src="" height="200" alt="...">-->
+        
+        <form name="qrForm">
+            <span>TypeNumber:</span>
+            <select name="t"></select>
+            <span>ErrorCorrectionLevel:</span>
+            <select name="e">
+                <option value="L">L(7%)</option>
+                <option value="M" selected="selected">M(15%)</option>
+                <option value="Q">Q(25%)</option>
+                <option value="H">H(30%)</option>
+            </select>
+            <span>Mode:</span>
+            <select name="m">
+                <option value="Numeric">Numeric</option>
+                <option value="Alphanumeric">Alphanumeric</option>
+                <option value="Byte" selected>Byte</option>
+                <option value="Kanji">Kanji</option>
+            </select>
+            <span>Multibyte:</span>
+            <select name="mb">
+                <option value="default">None</option>
+                <option value="SJIS">SJIS</option>
+                <option value="UTF-8" selected>UTF-8</option>
+            </select>
+            <br/>
+            <textarea name="msg" rows="10" cols="40">here comes qr!</textarea>
+            <br/>
+            <input type="button" value="update" onclick="update_gqrcode()"/>
+            <div id="qr"></div>
+        </form>
+</body>
+</html>
